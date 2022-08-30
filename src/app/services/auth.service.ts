@@ -31,9 +31,22 @@ export class AuthService {
 
     this.router.events
       .pipe(
-        filter((e) => e instanceof NavigationEnd),
-        map((e) => this.route.firstChild),
-        switchMap((route) => route?.data ?? of({}))
+        filter((e) => {
+          return e instanceof NavigationEnd;
+        }),
+        map((e) => {
+          console.log(e);
+          console.log(this.route);
+
+          console.log(this.route.firstChild);
+          return this.route.firstChild;
+        }),
+        switchMap((route) => {
+          console.log(route?.data);
+          route?.data.subscribe((data) => console.log(data));
+
+          return route?.data ?? of({});
+        })
       )
       .subscribe((data) => (this.redirect = data['authOnly'] ?? false));
   }
