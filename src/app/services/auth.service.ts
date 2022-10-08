@@ -35,16 +35,9 @@ export class AuthService {
           return e instanceof NavigationEnd;
         }),
         map((e) => {
-          console.log(e);
-          console.log(this.route);
-
-          console.log(this.route.firstChild);
           return this.route.firstChild;
         }),
         switchMap((route) => {
-          console.log(route?.data);
-          route?.data.subscribe((data) => console.log(data));
-
           return route?.data ?? of({});
         })
       )
