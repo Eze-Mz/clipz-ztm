@@ -4,7 +4,7 @@
 @tailwind utilities;
 
 body {
-    background-color: #161d31;
+    background-color: #fdba74;
   }
   
   .material-icons.text-base {
@@ -12,53 +12,13 @@ body {
   }
   
   .bg-secondary {
-    background-color: #283046;
+    background-color: #fb923c;
   }
   
   .bg-gradient {
-    background: linear-gradient(132deg, #FC415A, #591BC5, #212335);
+    background: linear-gradient(135deg, rgba(254,252,251,1) 0%, rgba(222,162,114,1) 39%, rgba(200,120,55,1) 100%);
     background-size: 400% 400%;
     animation: gradient 10s ease infinite;
-  }
-  
-  .cube {
-    position: absolute;
-    top: 100%;
-    left: 45%;
-    width: 10px;
-    height: 10px;
-    border: solid 1px #D7D4E4;
-    transform-origin: top left;
-    transform: scale(0) rotate(0deg) translate(-50%, -50%);
-    animation: cube 8s ease-in forwards infinite;
-  }
-  .cube:nth-child(2n) {
-    border-color: #FFF ;
-  }
-  .cube:nth-child(2) {
-    animation-delay: 1s;
-    left: 25%;
-    top: 40%;
-  }
-  .cube:nth-child(3) {
-    animation-delay: 3s;
-    left: 80%;
-    top: 50%;
-  }
-  .cube:nth-child(4) {
-    animation-delay: 5s;
-    left: 90%;
-    top: 10%;
-  }
-  .cube:nth-child(5) {
-    animation-delay: 7s;
-    left: 10%;
-    top: 50%;
-  }
-  .cube:nth-child(6) {
-    animation-delay: 9s;
-    left: 50%;
-    top: 10%;
   }
   
   .latest {

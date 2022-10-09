@@ -1,23 +1,26 @@
 <!-- Header -->
 <header id="header" class="bg-secondary">
-  <nav class="container mx-auto flex justify-start items-center py-8 px-4">
+  <nav class="container mx-auto flex justify-start items-center py-8 px-4 flex-wrap">
     <!-- App Name -->
-    <a class="text-3xl text-indigo-400 font-bold uppercase mr-4" routerLink="/">Clipz</a>
+    <a class="text-3xl font-bold mr-4" routerLink="/">YouMiau</a>
 
-    <div class="flex flex-grow items-center">
+    <span class="material-icons text-center text-2xl ml-auto mr-4 cursor-pointer sm:hidden"
+      (click)="toggleMenu()">menu</span>
+
+    <div class="flex sm:flex flex-col sm:flex-row flex-grow items-center w-full sm:w-auto" #menu>
       <!-- Primary Navigation -->
-      <ul class="flex flex-row mt-1">
+      <ul class="flex flex-col sm:flex-row mt-1">
         <!-- Navigation Links -->
         <li *ngIf="!(auth.isAuthenticated$ | async); else authLinks">
           <a class="px-2" href="#" (click)="openModal($event)">Login / Register</a>
         </li>
         <ng-template #authLinks>
           <li>
-            <a class="px-2" routerLink="/manage" routerLinkActive="text-indigo-400"
+            <a class="px-2" routerLink="/manage" routerLinkActive="text-orange-700"
               [routerLinkActiveOptions]="{exact: true}" [queryParams]="{ sort: '1' }">Manage</a>
           </li>
           <li>
-            <a class="px-2" routerLink="/upload" routerLinkActive="text-indigo-400"
+            <a class="px-2" routerLink="/upload" routerLinkActive="text-orange-700"
               [routerLinkActiveOptions]="{exact: true}">Upload</a>
           </li>
           <li>
@@ -25,11 +28,11 @@
           </li>
         </ng-template>
         <li>
-          <a class="px-2" routerLink="/about" routerLinkActive="text-indigo-400">About</a>
+          <a class="px-2" routerLink="/about" routerLinkActive="text-orange-700">About</a>
         </li>
       </ul>
       <!-- Language Switcher -->
-      <ul class="flex flex-row ml-auto">
+      <ul class="hidden sm:flex flex-row ml-auto">
         <li>
           <a href="#">
             <img
