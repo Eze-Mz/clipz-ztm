@@ -21,5 +21,6 @@ export class NavComponent implements OnInit {
 
   toggleMenu() {
     this.menu?.nativeElement.classList.toggle('hidden');
+    this.menu?.nativeElement.classList.toggle('flex');
   }
 }
